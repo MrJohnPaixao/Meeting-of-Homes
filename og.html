@@ -34,11 +34,19 @@
     width: 700px; height: 500px;
     background: radial-gradient(50% 50% at 50% 50%, rgba(224,128,48,0.30) 0%, rgba(224,128,48,0) 70%);
   }
+  .edge-glow {
+    position: absolute; z-index: 2; right: 300px; top: 56%; transform: translateY(-50%);
+    width: 360px; height: 540px; pointer-events: none;
+    background: radial-gradient(46% 50% at 55% 50%, rgba(224,128,48,0.18) 0%, rgba(150,110,70,0.12) 38%, rgba(224,128,48,0) 72%);
+    filter: blur(18px);
+  }
   .steak {
     position: absolute; z-index: 3; right: -120px; top: 56%; transform: translateY(-50%);
     width: 600px;
-    -webkit-mask-image: radial-gradient(70% 62% at 50% 54%, #000 66%, rgba(0,0,0,0) 100%);
-            mask-image: radial-gradient(70% 62% at 50% 54%, #000 66%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: radial-gradient(70% 62% at 50% 54%, #000 66%, rgba(0,0,0,0) 100%), linear-gradient(to right, transparent 0%, transparent 4%, #000 26%);
+            mask-image: radial-gradient(70% 62% at 50% 54%, #000 66%, rgba(0,0,0,0) 100%), linear-gradient(to right, transparent 0%, transparent 4%, #000 26%);
+    -webkit-mask-composite: source-in;
+            mask-composite: intersect;
     filter: drop-shadow(0 30px 40px rgba(0,0,0,0.7));
   }
   .steak img { width: 100%; display: block; }
@@ -87,6 +95,7 @@
     <div class="bbq"></div>
     <div class="scrim"></div>
     <div class="glow"></div>
+    <div class="edge-glow"></div>
     <div class="steak"><img src="assets/steak.png" alt=""></div>
 
     <div class="pad">
